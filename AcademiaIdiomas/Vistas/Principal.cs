@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AcademiaBaile.Vistas;
+using AcademiaIdiomas.Controladores;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,30 @@ namespace AcademiaBaile
         public Principal()
         {
             InitializeComponent();
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+            //para que no se permita abrir varias veces
+
+            Alumnos frmAlumnos;
+
+            if (!ControladorFormularios.EstaFormularioAbierto(typeof(Alumnos)))
+            {
+                frmAlumnos = new Alumnos();
+                frmAlumnos.Show();
+            }
+            else
+            {
+                frmAlumnos = (Alumnos)ControladorFormularios.RecuperarFormulario(typeof(Alumnos));
+                if (frmAlumnos.WindowState == FormWindowState.Minimized)
+                {
+                    frmAlumnos.WindowState = FormWindowState.Normal;
+                }
+                frmAlumnos.Show();
+                frmAlumnos.Focus();
+            }
         }
     }
 }

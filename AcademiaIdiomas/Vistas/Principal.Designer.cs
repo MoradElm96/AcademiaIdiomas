@@ -34,8 +34,8 @@ namespace AcademiaBaile
             this.inscripcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevaInscripciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facturacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facturación2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,55 +50,58 @@ namespace AcademiaBaile
             this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1376, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1032, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.clientesToolStripMenuItem.Text = "Alumnos";
+            this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // inscripcionesToolStripMenuItem
             // 
             this.inscripcionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevaInscripciónToolStripMenuItem});
             this.inscripcionesToolStripMenuItem.Name = "inscripcionesToolStripMenuItem";
-            this.inscripcionesToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
+            this.inscripcionesToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
             this.inscripcionesToolStripMenuItem.Text = "Inscripciones";
             // 
             // nuevaInscripciónToolStripMenuItem
             // 
             this.nuevaInscripciónToolStripMenuItem.Name = "nuevaInscripciónToolStripMenuItem";
-            this.nuevaInscripciónToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
+            this.nuevaInscripciónToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.nuevaInscripciónToolStripMenuItem.Text = "Nueva Inscripción";
             // 
             // facturacionToolStripMenuItem
             // 
             this.facturacionToolStripMenuItem.Name = "facturacionToolStripMenuItem";
-            this.facturacionToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
+            this.facturacionToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             this.facturacionToolStripMenuItem.Text = "Facturacion";
-            // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(52, 24);
-            this.salirToolStripMenuItem.Text = "Salir";
             // 
             // facturación2ToolStripMenuItem
             // 
             this.facturación2ToolStripMenuItem.Name = "facturación2ToolStripMenuItem";
-            this.facturación2ToolStripMenuItem.Size = new System.Drawing.Size(110, 24);
+            this.facturación2ToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
             this.facturación2ToolStripMenuItem.Text = "Facturación 2";
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.salirToolStripMenuItem.Text = "Salir";
             // 
             // Principal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1376, 696);
+            this.ClientSize = new System.Drawing.Size(1032, 566);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Principal";
             this.Text = "Principal";
             this.menuStrip1.ResumeLayout(false);

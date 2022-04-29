@@ -16,5 +16,10 @@ namespace AcademiaBaile.Vistas
         {
             InitializeComponent();
         }
+
+        private void NuevaInscripcion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
