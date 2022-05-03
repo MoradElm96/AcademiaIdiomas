@@ -71,5 +71,21 @@ namespace AcademiaBaile.Vistas
 
             MessageBox.Show("la suma total es de " + sumaSalarios);
         }
+
+        private void btnNuevaInscripcion_Click(object sender, EventArgs e)
+        {
+            
+            if(dataGridView1.SelectedRows.Count >= 1) 
+            {
+                NuevaInscripcion nuevaInscripcion = new NuevaInscripcion();
+                nuevaInscripcion.ShowDialog();
+
+
+            }
+            else
+            {
+                MessageBox.Show("selecione un alumno antes de abrir inscripcion");
+            }
+        }
     }
 }

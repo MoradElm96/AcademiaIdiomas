@@ -94,6 +94,7 @@ namespace AcademiaBaile.Vistas
             this.btnNuevaInscripcion.TabIndex = 4;
             this.btnNuevaInscripcion.Text = "Nueva Inscripción";
             this.btnNuevaInscripcion.UseVisualStyleBackColor = true;
+            this.btnNuevaInscripcion.Click += new System.EventHandler(this.btnNuevaInscripcion_Click);
             // 
             // btnIncrementarSaldo
             // 
