@@ -46,6 +46,40 @@ namespace AcademiaIdiomas.Controladores
 
         }
 
+        public static bool incrementarSueldo(int idAlumno)
+        {
+            //duda porque me aumenta en todo
+            List<Alumno> listaAModificar = recuperarAlumnos();
+           
+
+            double cantidadSumar = 50;
+            
+            
+
+            int posicion = listaAModificar.FindIndex(alumno => alumno.idAlumno == idAlumno);
+            if(posicion!= -1)
+            {
+
+            
+
+                foreach (var alumnos in listaAModificar)
+                {
+                    alumnos.saldo = alumnos.saldo + cantidadSumar;       
+                    
+                }
+
+               
+
+                return guardarAlumnos(listaAModificar);
+
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
         public static bool guardarAlumnos(List<Alumno> lista)
         {
             try

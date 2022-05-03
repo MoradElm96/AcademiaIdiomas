@@ -82,6 +82,7 @@ namespace AcademiaBaile.Vistas
             this.btnSaldoMedio.TabIndex = 3;
             this.btnSaldoMedio.Text = "Saldo medio";
             this.btnSaldoMedio.UseVisualStyleBackColor = true;
+            this.btnSaldoMedio.Click += new System.EventHandler(this.btnSaldoMedio_Click);
             // 
             // btnNuevaInscripcion
             // 
@@ -104,6 +105,7 @@ namespace AcademiaBaile.Vistas
             this.btnIncrementarSaldo.TabIndex = 5;
             this.btnIncrementarSaldo.Text = "Incrementar Saldo";
             this.btnIncrementarSaldo.UseVisualStyleBackColor = true;
+            this.btnIncrementarSaldo.Click += new System.EventHandler(this.btnIncrementarSaldo_Click);
             // 
             // Alumnos
             // 

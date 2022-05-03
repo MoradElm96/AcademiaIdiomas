@@ -44,5 +44,32 @@ namespace AcademiaBaile.Vistas
             cargarDatos();
 
         }
+
+        private void btnIncrementarSaldo_Click(object sender, EventArgs e)
+        {
+            int contadorSumados = 0;
+            foreach (DataGridViewRow fila in dataGridView1.SelectedRows)
+            {
+              if(ControladorAlumnosJson.incrementarSueldo(Convert.ToInt32(fila.Cells[0].Value.ToString())))
+                {
+                    contadorSumados++;
+                }
+            }
+            MessageBox.Show("Se han sumado " + contadorSumados.ToString() + " sueldos");
+            cargarDatos();
+        }
+
+        private void btnSaldoMedio_Click(object sender, EventArgs e)
+        {
+            double sumaSalarios=0;
+
+            foreach(var alumnos in listaAlumnos)
+            {
+                 sumaSalarios =  listaAlumnos.Sum(suma => suma.saldo)/ listaAlumnos.Count;
+                
+            }
+
+            MessageBox.Show("la suma total es de " + sumaSalarios);
+        }
     }
 }
