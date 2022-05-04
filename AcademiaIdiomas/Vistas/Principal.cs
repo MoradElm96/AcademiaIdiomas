@@ -42,5 +42,11 @@ namespace AcademiaBaile
                 frmAlumnos.Focus();
             }
         }
+
+        private void inscripcionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NuevaInscripcion nuevaInscripcion = new NuevaInscripcion();
+            nuevaInscripcion.ShowDialog();
+        }
     }
 }

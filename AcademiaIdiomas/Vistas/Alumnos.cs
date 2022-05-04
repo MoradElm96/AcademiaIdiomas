@@ -80,6 +80,8 @@ namespace AcademiaBaile.Vistas
                 NuevaInscripcion nuevaInscripcion = new NuevaInscripcion();
                 nuevaInscripcion.ShowDialog();
 
+                
+
 
             }
             else

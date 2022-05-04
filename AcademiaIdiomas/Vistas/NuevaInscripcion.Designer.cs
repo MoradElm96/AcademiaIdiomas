@@ -60,23 +60,25 @@ namespace AcademiaBaile.Vistas
             // 
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.Location = new System.Drawing.Point(182, 386);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(126, 59);
             this.btnCerrar.TabIndex = 4;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnGuardar
             // 
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.Location = new System.Drawing.Point(441, 386);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(126, 59);
             this.btnGuardar.TabIndex = 5;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // lblAlumno
             // 
@@ -93,7 +95,7 @@ namespace AcademiaBaile.Vistas
             // 
             this.cmbAlumnos.FormattingEnabled = true;
             this.cmbAlumnos.Location = new System.Drawing.Point(352, 99);
-            this.cmbAlumnos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbAlumnos.Margin = new System.Windows.Forms.Padding(2);
             this.cmbAlumnos.Name = "cmbAlumnos";
             this.cmbAlumnos.Size = new System.Drawing.Size(213, 21);
             this.cmbAlumnos.TabIndex = 7;
@@ -113,7 +115,7 @@ namespace AcademiaBaile.Vistas
             // 
             this.lstCursos.FormattingEnabled = true;
             this.lstCursos.Location = new System.Drawing.Point(352, 141);
-            this.lstCursos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstCursos.Margin = new System.Windows.Forms.Padding(2);
             this.lstCursos.Name = "lstCursos";
             this.lstCursos.Size = new System.Drawing.Size(213, 69);
             this.lstCursos.TabIndex = 9;
@@ -122,7 +124,7 @@ namespace AcademiaBaile.Vistas
             // 
             this.cmbDescuento.FormattingEnabled = true;
             this.cmbDescuento.Location = new System.Drawing.Point(352, 228);
-            this.cmbDescuento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbDescuento.Margin = new System.Windows.Forms.Padding(2);
             this.cmbDescuento.Name = "cmbDescuento";
             this.cmbDescuento.Size = new System.Drawing.Size(213, 21);
             this.cmbDescuento.TabIndex = 11;
@@ -152,18 +154,31 @@ namespace AcademiaBaile.Vistas
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(352, 285);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker1.MaxDate = new System.DateTime(2099, 5, 5, 0, 0, 0, 0);
+            this.dateTimePicker1.MinDate = new System.DateTime(2022, 5, 5, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(213, 20);
             this.dateTimePicker1.TabIndex = 13;
+            this.dateTimePicker1.Value = new System.DateTime(2022, 5, 5, 0, 0, 0, 0);
             // 
             // nupMinutosCurso
             // 
             this.nupMinutosCurso.Location = new System.Drawing.Point(441, 340);
-            this.nupMinutosCurso.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nupMinutosCurso.Margin = new System.Windows.Forms.Padding(2);
+            this.nupMinutosCurso.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             this.nupMinutosCurso.Name = "nupMinutosCurso";
             this.nupMinutosCurso.Size = new System.Drawing.Size(90, 20);
             this.nupMinutosCurso.TabIndex = 14;
+            this.nupMinutosCurso.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
             // lblMinutos
             // 
@@ -194,7 +209,7 @@ namespace AcademiaBaile.Vistas
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.lblInscripcion);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "NuevaInscripcion";
             this.Text = "NuevaInscripcion";
             this.Load += new System.EventHandler(this.NuevaInscripcion_Load);

@@ -51,8 +51,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Alumno.cs" />
+    <Compile Include="Clases\Curso.cs" />
+    <Compile Include="Clases\Inscripcion.cs" />
     <Compile Include="Controladores\ControladorAlumnosJson.cs" />
+    <Compile Include="Controladores\ControladorCursosJson.cs" />
     <Compile Include="Controladores\ControladorFormularios.cs" />
+    <Compile Include="Controladores\ControladorInscripciones.cs" />
     <Compile Include="Vistas\Alumnos.cs">
       <SubType>Form</SubType>
     </Compile>
