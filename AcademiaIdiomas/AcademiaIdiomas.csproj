@@ -75,6 +75,12 @@
     <Compile Include="Vistas\Facturacion2.Designer.cs">
       <DependentUpon>Facturacion2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\FrmDialogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmDialogo.Designer.cs">
+      <DependentUpon>FrmDialogo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\NuevaInscripcion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Facturacion2.resx">
       <DependentUpon>Facturacion2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmDialogo.resx">
+      <DependentUpon>FrmDialogo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\NuevaInscripcion.resx">
       <DependentUpon>NuevaInscripcion.cs</DependentUpon>

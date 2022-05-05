@@ -48,5 +48,12 @@ namespace AcademiaBaile
             NuevaInscripcion nuevaInscripcion = new NuevaInscripcion();
             nuevaInscripcion.ShowDialog();
         }
+
+        private void facturacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Facturacion facturacion = new Facturacion();
+            facturacion.Show();
+
+        }
     }
 }

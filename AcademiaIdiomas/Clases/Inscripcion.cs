@@ -12,13 +12,13 @@ namespace AcademiaIdiomas.Clases
         public  int idAlumno { get; set; }
        
         public DateTime fechaAlta { get; set; }
-        public int minutosCurso { get; set; }
+        public double minutosCurso { get; set; }
         public string estado { get; set; }
-        public int [] descuentoPorMinuto { get; set; }
+        public int  descuentoPorMinuto { get; set; }
 
         
 
-        public Inscripcion(int idCurso, int idAlumno, DateTime fechaAlta, int minutosCurso, string estado, int[] descuentoPorMinuto)
+        public Inscripcion(int idCurso, int idAlumno, DateTime fechaAlta, double minutosCurso, string estado, int descuentoPorMinuto)
         {
             this.idCurso = idCurso;
             this.idAlumno = idAlumno;

@@ -74,7 +74,7 @@ namespace AcademiaBaile
             // nuevaInscripciónToolStripMenuItem
             // 
             this.nuevaInscripciónToolStripMenuItem.Name = "nuevaInscripciónToolStripMenuItem";
-            this.nuevaInscripciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevaInscripciónToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.nuevaInscripciónToolStripMenuItem.Text = "Nueva Inscripción";
             // 
             // facturacionToolStripMenuItem
@@ -82,6 +82,7 @@ namespace AcademiaBaile
             this.facturacionToolStripMenuItem.Name = "facturacionToolStripMenuItem";
             this.facturacionToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             this.facturacionToolStripMenuItem.Text = "Facturacion";
+            this.facturacionToolStripMenuItem.Click += new System.EventHandler(this.facturacionToolStripMenuItem_Click);
             // 
             // facturación2ToolStripMenuItem
             // 

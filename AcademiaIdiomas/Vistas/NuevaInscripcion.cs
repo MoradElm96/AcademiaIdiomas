@@ -49,13 +49,27 @@ namespace AcademiaBaile.Vistas
             lstCursos.DisplayMember = "nombreCurso";
             lstCursos.ValueMember = "idCurso";
             //rellenar array
-            Inscripcion inscripcion = new Inscripcion();
 
-            inscripcion.descuentoPorMinuto =  new int[] {0,10,15,20,25,30,50,60};
 
-            cmbDescuento.DataSource = inscripcion.descuentoPorMinuto;
+            int[] descuentos = new int[] { 0, 10, 15, 20, 25, 30, 50, 60 };
+
+
+            for (int i = 0; i < descuentos.Length; i++)
+
+            {
+
+
+            }
+
+
+
+
+            cmbDescuento.DataSource = descuentos;
             cmbDescuento.DisplayMember = "descuentoPorMinuto";
-                
+            // cmbDescuento.ValueMember = "descuentoPorMinuto";
+
+
+
 
         }
 
@@ -64,22 +78,69 @@ namespace AcademiaBaile.Vistas
             listaAlumnos = ControladorAlumnosJson.recuperarAlumnos();
             listaCursos = ControladorCursosJson.recuperarCursos();
 
-            double saldoSuficiente=0.0;
+            double minutos = Convert.ToDouble(nupMinutosCurso.Value);
+            double saldoSuficiente = 0;
+            string estado = "Abierta";
 
-           
-            /*
-            foreach(var cursos in listaCursos.Where(x => listaAlumnos.Where(y => y.saldo >= (listaCursos.Where(z => z.costeMinuto)) )
-            {
-                Console.WriteLine(cursos.costeMinuto);
+
+
+            foreach (var alumnos in listaAlumnos)
+            {           
+                foreach (var curso in listaCursos)
+                {              
+                    saldoSuficiente = minutos * curso.costeMinuto;
+                }
+
+                if (alumnos.saldo >= saldoSuficiente)
+                {
+                    int alumno = cmbAlumnos.SelectedIndex;
+                    int curso = lstCursos.SelectedIndex;
+                    int descuento = cmbDescuento.SelectedIndex;
+                    DateTime fechaAlta = dateTimePicker1.Value;
+
+
+                    Inscripcion inscripcion = new Inscripcion(curso, alumno, fechaAlta, minutos, estado, descuento);
+                    List<Inscripcion> lista = new List<Inscripcion>();
+                    lista.Add(inscripcion);
+
+                    if (ControladorInscripciones.guardarInscripciones(lista))
+                    {
+                        MessageBox.Show("Realizado");
+                    }
+                    else
+                    {
+                        MessageBox.Show("No realizado, no tiene suficiente saldo");
+                    }
+                    //preguntar porque salta dos veces y entra siempre en bucle
+
+                    //convertir a int porque es un string, siempre coger el value
+                    //selected item es todo entero el equipo entero, hay qye convertir a objeto equipo y luego coger el .idEquipo
+
+                    //datasource, lista de textos, pero tambien puede ser una lista de objetos
+                    //si tengo lista de objetos , displaymember  es lo que yo veo en la pantalla y value member el valor que quiero quedarme para trabajar.
+                    //selected index, la posicion, si admite coger varios es items
+                    //si se pone selected value hay que castear
+
+                } else
+                {
+                    MessageBox.Show("no se ha podido realizar la inscripcion");
+                }
+
+
+
+
+
+
+
+
+
+
             }
 
-            List<MiObj> ListaFinal = new List<MiObj>();
 
 
-            foreach (var item in SoftwareDisponible.Where(x => SoftwareEquipo.Where(y => y.tipo == x.tipo && y.EsUnico != true).Select(y => y.tipo).Contains(x.tipo)))
-                ListaFinal.Add(item);
 
-            */
+
 
         }
     }

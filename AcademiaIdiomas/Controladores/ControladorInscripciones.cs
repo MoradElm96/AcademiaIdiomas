@@ -28,5 +28,21 @@ namespace AcademiaIdiomas.Controladores
 
         }
 
+
+        public static List<Inscripcion> recuperarInscripcones()
+        {
+            List<Inscripcion> listaInscripciones = new List<Inscripcion>();
+
+            try
+            {
+                string archivoJson = File.ReadAllText(ConfigurationManager.AppSettings.Get("ficheroInscripciones"));
+                //añadir ruta a mano en app setings
+                listaInscripciones = JsonConvert.DeserializeObject<List<Inscripcion>>(archivoJson);
+            }
+            catch (Exception) { }
+
+            return listaInscripciones;
+        }
+
     }
 }
