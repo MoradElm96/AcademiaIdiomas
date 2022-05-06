@@ -22,9 +22,17 @@ namespace AcademiaBaile.Vistas
         }
         List<Alumno> listaAlumnos = new List<Alumno>();
         List<Curso> listaCursos = new List<Curso>();
+
+        public int idAlumno = -1;
+
         private void NuevaInscripcion_Load(object sender, EventArgs e)
         {
-
+            cargarDatos();
+            if (idAlumno != -1)
+            {
+                cmbAlumnos.SelectedValue = idAlumno;
+            }
+                
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

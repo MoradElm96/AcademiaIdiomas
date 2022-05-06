@@ -72,12 +72,14 @@ namespace AcademiaBaile.Vistas
             MessageBox.Show("la suma total es de " + sumaSalarios);
         }
 
+       
         private void btnNuevaInscripcion_Click(object sender, EventArgs e)
         {
             
             if(dataGridView1.SelectedRows.Count >= 1) 
             {
                 NuevaInscripcion nuevaInscripcion = new NuevaInscripcion();
+                nuevaInscripcion.idAlumno = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
                 nuevaInscripcion.ShowDialog();
 
                 

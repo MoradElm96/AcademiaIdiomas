@@ -28,12 +28,11 @@ namespace AcademiaBaile.Vistas
 
             cmbAlumnos.DataSource = listaAlumnoss;
             cmbAlumnos.DisplayMember = "nombreAlumno";
-            cmbAlumnos.ValueMember = "idAlumno";
-
-
-
-                       
+            cmbAlumnos.ValueMember = "idAlumno";          
         }
+
+
+
 
         private void cmbAlumnos_SelectionChangeCommitted(object sender, EventArgs e)
         {
@@ -79,6 +78,7 @@ namespace AcademiaBaile.Vistas
                 }
             });
 
+            //lo de arriba pero hecho en una sola linea
            // listaInscripciones = listaInscripcionesTotal.FindAll((inscripcion) => listaCursosIngles.FindIndex(curso => curso.idCurso == inscripcion.idCurso) != -1); 
            if (listaInscripciones.Count>0) { 
                 dataGridView1.Refresh();
@@ -119,9 +119,6 @@ namespace AcademiaBaile.Vistas
                 ControladorInscripciones.exportarInscripciones(listaInscripciones, nombreArchivo);//guarda el nombre y la lista
 
                 }
-
-
-           
 
 
 
