@@ -30,7 +30,21 @@ namespace AcademiaIdiomas.Controladores
             return true;
 
         }
+        public static bool exportarInscripciones(List<Inscripcion> listaInscripciones,string nombreArchivo)
+        {
+            try
+            {
+                string archivoJson = JsonConvert.SerializeObject(listaInscripciones);
+                File.WriteAllText(nombreArchivo, archivoJson);
 
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+            return true;
+
+        }
 
         public static List<Inscripcion> recuperarInscripcones()
         {
