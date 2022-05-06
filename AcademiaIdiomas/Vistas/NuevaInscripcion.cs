@@ -52,80 +52,52 @@ namespace AcademiaBaile.Vistas
 
 
             int[] descuentos = new int[] { 0, 10, 15, 20, 25, 30, 50, 60 };
-
-
-            for (int i = 0; i < descuentos.Length; i++)
-
-            {
-
-
-            }
-
-
-
-
-            cmbDescuento.DataSource = descuentos;
-            cmbDescuento.DisplayMember = "descuentoPorMinuto";
-            // cmbDescuento.ValueMember = "descuentoPorMinuto";
-
-
-
-
+            cmbDescuento.DataSource = descuentos;// si solo son numeros no poner nada
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            //comprobar que todo okey, si todo okey
+            //localizar lista alumnos el alumno con un find index
+            //localizar curso igual que el alumno
+
             listaAlumnos = ControladorAlumnosJson.recuperarAlumnos();
             listaCursos = ControladorCursosJson.recuperarCursos();
 
+            Alumno alumno = listaAlumnos.Find(a => a.idAlumno == Convert.ToInt32(cmbAlumnos.SelectedValue)); //devuelve el alumno
+
+            Curso curso = listaCursos.Find(c => c.idCurso == Convert.ToInt32(lstCursos.SelectedValue));
+
             double minutos = Convert.ToDouble(nupMinutosCurso.Value);
-            double saldoSuficiente = 0;
-            string estado = "Abierta";
+
+            if (alumno.saldo >= curso.costeMinuto*minutos)
+            {
+                int alum = alumno.idAlumno;  
+                int curs = curso.idCurso;
+                int descuento = Convert.ToInt32(cmbDescuento.SelectedValue);
+                DateTime fechaAlta = dateTimePicker1.Value;
+                string estado = "Abierta";
+                
+                //añader objeto y en esta pantalla no hay nada
+                Inscripcion inscripcion = new Inscripcion(curs, alum, fechaAlta, minutos, estado, descuento);
+                             
+                ControladorInscripciones.guardarInscripciones(inscripcion);
+                
+                MessageBox.Show("Realizado");
+                
+
+
+            }
+            else
+            {
+                MessageBox.Show("No realizado, no tiene suficiente saldo");
+            }
+
+            //selected index devuelve un numero y value el objeto entero
 
 
 
-            foreach (var alumnos in listaAlumnos)
-            {           
-                foreach (var curso in listaCursos)
-                {              
-                    saldoSuficiente = minutos * curso.costeMinuto;
-                }
-
-                if (alumnos.saldo >= saldoSuficiente)
-                {
-                    int alumno = cmbAlumnos.SelectedIndex;
-                    int curso = lstCursos.SelectedIndex;
-                    int descuento = cmbDescuento.SelectedIndex;
-                    DateTime fechaAlta = dateTimePicker1.Value;
-
-
-                    Inscripcion inscripcion = new Inscripcion(curso, alumno, fechaAlta, minutos, estado, descuento);
-                    List<Inscripcion> lista = new List<Inscripcion>();
-                    lista.Add(inscripcion);
-
-                    if (ControladorInscripciones.guardarInscripciones(lista))
-                    {
-                        MessageBox.Show("Realizado");
-                    }
-                    else
-                    {
-                        MessageBox.Show("No realizado, no tiene suficiente saldo");
-                    }
-                    //preguntar porque salta dos veces y entra siempre en bucle
-
-                    //convertir a int porque es un string, siempre coger el value
-                    //selected item es todo entero el equipo entero, hay qye convertir a objeto equipo y luego coger el .idEquipo
-
-                    //datasource, lista de textos, pero tambien puede ser una lista de objetos
-                    //si tengo lista de objetos , displaymember  es lo que yo veo en la pantalla y value member el valor que quiero quedarme para trabajar.
-                    //selected index, la posicion, si admite coger varios es items
-                    //si se pone selected value hay que castear
-
-                } else
-                {
-                    MessageBox.Show("no se ha podido realizar la inscripcion");
-                }
-
+            
 
 
 
@@ -144,4 +116,4 @@ namespace AcademiaBaile.Vistas
 
         }
     }
-}
+

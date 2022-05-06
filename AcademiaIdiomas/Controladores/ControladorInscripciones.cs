@@ -12,11 +12,14 @@ namespace AcademiaIdiomas.Controladores
 {
     public class ControladorInscripciones
     {
-        public static bool guardarInscripciones(List<Inscripcion> lista)
+        public static bool guardarInscripciones(Inscripcion inscripcion)
         {
             try
             {
-                string archivoJson = JsonConvert.SerializeObject(lista);
+                List<Inscripcion> listaInscripciones = ControladorInscripciones.recuperarInscripcones();
+                listaInscripciones.Add(inscripcion);
+
+                string archivoJson = JsonConvert.SerializeObject(listaInscripciones);
                 File.WriteAllText(ConfigurationManager.AppSettings.Get("ficheroInscripciones"), archivoJson);
 
             }

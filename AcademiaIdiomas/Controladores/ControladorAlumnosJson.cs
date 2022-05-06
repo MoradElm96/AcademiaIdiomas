@@ -54,29 +54,24 @@ namespace AcademiaIdiomas.Controladores
 
             double cantidadSumar = 50;
             
-            
+            //alternativa lista.foreach (alumno=> alumno.saldo ==50);
+            //ver listas for each
 
+            //para cada posicion selecionada en el data grid
             int posicion = listaAModificar.FindIndex(alumno => alumno.idAlumno == idAlumno);
             if(posicion!= -1)
             {
-
-            
-
-                foreach (var alumnos in listaAModificar)
-                {
-                    alumnos.saldo = alumnos.saldo + cantidadSumar;       
-                    
-                }
-
-               
-
-                return guardarAlumnos(listaAModificar);
-
+                    listaAModificar[posicion].saldo = listaAModificar[posicion].saldo + cantidadSumar;       
+                    return guardarAlumnos(listaAModificar);
             }
             else
             {
                 return false;
             }
+
+
+            //listaAModificar.ForEach(alumno => alumno.saldo += cantidadSumar);
+
         }
 
 
