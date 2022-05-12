@@ -22,5 +22,16 @@ namespace AcademiaIdiomas.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=root;password=root;persistsecurityinfo=True;port=3606;da" +
+            "tabase=2dam")]
+        public string _2damConnectionString {
+            get {
+                return ((string)(this["_2damConnectionString"]));
+            }
+        }
     }
 }

@@ -89,6 +89,7 @@ namespace AcademiaBaile
             this.facturación2ToolStripMenuItem.Name = "facturación2ToolStripMenuItem";
             this.facturación2ToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
             this.facturación2ToolStripMenuItem.Text = "Facturación 2";
+            this.facturación2ToolStripMenuItem.Click += new System.EventHandler(this.facturación2ToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 

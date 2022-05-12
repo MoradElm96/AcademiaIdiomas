@@ -1,5 +1,6 @@
 ﻿using AcademiaBaile.Vistas;
 using AcademiaIdiomas.Controladores;
+using AcademiaIdiomas.Vistas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -54,6 +55,12 @@ namespace AcademiaBaile
             Facturacion facturacion = new Facturacion();
             facturacion.Show();
 
+        }
+
+        private void facturación2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Facturacion2 facturacion2 = new Facturacion2();
+            facturacion2.ShowDialog();
         }
     }
 }
