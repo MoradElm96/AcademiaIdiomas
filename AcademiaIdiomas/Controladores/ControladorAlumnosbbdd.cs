@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using AcademiaIdiomas.Clases;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -13,21 +14,33 @@ namespace AcademiaIdiomas.Controladores
     {
         string cadenaConexion = ConfigurationManager.ConnectionStrings["2damConnectionString"].ConnectionString;
 
-        public DataSet cargarDatos()
+        public List<Alumno> cargarDatos()
         {
-            DataSet dataSet = new DataSet();
-
+            List<Alumno> listaAlumnos = new List<Alumno>();
             try
             {
-                using (var cnn = new MySqlConnection(cadenaConexion))
-                {
+                    MySqlConnection cnn = new MySqlConnection(cadenaConexion);
                     cnn.Open();
-                    MySqlDataAdapter dataAdapter = new MySqlDataAdapter("select * from Alumnos", cnn);
-                    dataAdapter.Fill(dataSet);
-                    dataAdapter.Dispose();
+                    MySqlCommand comando = cnn.CreateCommand();
+                    comando.CommandType = CommandType.Text;
+                    comando.CommandText = "SELECT * FROM Alumnos";
+                    MySqlDataReader dataReader = comando.ExecuteReader();
+                    while (dataReader.Read())
+                    {
+                    int idAlumno = dataReader.GetInt32("idAlumno");
+                    string nombreAlumno = dataReader.GetString("nombreAlumno");
+                    string email = ""; 
+                    double saldo = dataReader.GetDouble("saldo");
+
+                        listaAlumnos.Add(new Alumno (idAlumno, nombreAlumno, email, saldo));
+                    }
+                    dataReader.Close();
+                    comando.Dispose();
                     cnn.Close();
 
-                }
+                    cnn.Close();
+
+               
 
             }
             catch (Exception e)
@@ -35,7 +48,7 @@ namespace AcademiaIdiomas.Controladores
 
                 Console.WriteLine(e);
             }
-            return dataSet;
+            return listaAlumnos;
 
         }
 

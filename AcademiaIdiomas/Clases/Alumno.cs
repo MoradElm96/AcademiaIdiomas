@@ -22,6 +22,8 @@ namespace AcademiaIdiomas.Clases
             this.saldo = saldo;
         }
 
+
+       
         public Alumno()
         {
 
